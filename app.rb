@@ -6,7 +6,7 @@ configure do
 end
 
 post '/sms-handler' do
-  puts params
+  logger.warn params
   status 200
   body(MultiJson.encode({:success => true}))
 end
