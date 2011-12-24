@@ -6,9 +6,9 @@ configure do
 end
 
 post '/handle-sms' do
-  logger.warn params
+  logger.info params
   code = /^jettaxi:(?<code>.*)$/i.match(params["mes"])[:code].strip
-  logger.warn code
+  logger.info code
   status 200
   body(MultiJson.encode({:success => true}))
 end
