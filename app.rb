@@ -15,5 +15,6 @@ end
 
 post '/ipn' do
   logger.info params
-  
+  status 200
+  body(MultiJson.encode(params))  
 end
