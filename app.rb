@@ -18,3 +18,17 @@ post '/ipn' do
   status 200
   body(MultiJson.encode(params))  
 end
+
+post '/return' do
+  logger.info "retrun"
+  logger.info params
+  status 200
+  body(MultiJson.encode(params))  
+end
+
+post '/cancel' do
+  logger.info "cancel"
+  logger.info params
+  status 200
+  body(MultiJson.encode(params))  
+end
