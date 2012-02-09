@@ -12,3 +12,8 @@ post '/handle-sms' do
   status 200
   body(MultiJson.encode({:success => true}))
 end
+
+post '/ipn' do
+  logger.info params
+  
+end
