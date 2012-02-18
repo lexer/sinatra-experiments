@@ -32,3 +32,17 @@ post '/cancel' do
   status 200
   body(MultiJson.encode(params))  
 end
+
+get '/contest' do
+  logger.info "request_ip: #{request.ip}"
+  logger.info "x forwarded: #{env["HTTP_X_FORWARDED_FOR"]}"
+  logger.info "remote addr: #{env['REMOTE_ADDR']}"
+
+  body(MultiJson.encode({:success => true}))
+
+  #@client_ip = request.remote_ip
+  #@remote_ip = request.env["HTTP_X_FORWARDED_FOR"]
+  #@my_ip = request.env["HTTP_X_FORWARDED_FOR"] || request.remote_addr
+  #@ip_addr = request.env['REMOTE_ADDR']
+
+end
